@@ -1,0 +1,7 @@
+<div class="text-center" *ngIf="hasMore; else mensagem"><!-- Enquanto houver dados -->
+    <button class="btn btn-primary">Carregar mais</button>
+</div>
+
+<ng-template #mensagem><!-- Quando acabarem as páginas -->
+    <p class="text-center text-muted">Não existem mais dados para carregar</p>
+</ng-template>

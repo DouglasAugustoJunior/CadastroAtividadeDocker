@@ -1,0 +1,46 @@
+<footer class="mt-5"><!-- Se o usuário existir exibe o footer -->
+    <div class="fixed-bottom bg-white p-1">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-5">
+                    <a [routerLink]="['']">
+                        <i class="fa fa-home fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col-2 text-dark">
+                    <span type="button" class="btn btn-success" data-toggle="modal" data-target="#modalInfo">
+                        Douglas Augusto
+                    </span>
+                </div>
+                <div class="col-5">
+                    <a [routerLink]="['atividade', 'add']">
+                        <i class="fa fa-plus-circle fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal -->
+<div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="modalInfoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-dark" id="modalInfoLabel">Atividade Sistemas Distribuídos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-dark">
+                <strong>Curso: </strong>Ciência da computação
+                <strong>Turma: </strong>CC7P13 <strong><br>
+                Turno: </strong>Noturno
+                <strong>Douglas Augusto da Silva Jr</strong><br>
+                <strong>Disciplina: </strong>Sistemas Distribuídos<br>
+                <strong>Prof: </strong>Dirceu Semighini Filho  <strong>Atividade: </strong>Docker
+                
+            </div>
+        </div>
+    </div>
+</div>

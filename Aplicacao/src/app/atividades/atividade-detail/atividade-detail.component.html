@@ -1,0 +1,35 @@
+<div class="bg-black container" *ngIf="(atividade$ | async) as atividade"><!-- por ser um observable precisa do pipe async e do as atividade para pegar os dados e exibir, só vai exibir quando os dados chegarem -->
+
+  <div class="row">
+
+    <div class="col-lg-12">
+
+      <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="flag"><!-- Alerta de Exclusão/Alteração -->
+        <strong>{{flag}} com sucesso!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <form (submit)="alterar($event)" [formGroup]="atividadesForm">
+
+        <label><h5>Atualize sua atividade:</h5></label>
+        <div class="input-group">
+          <textarea formControlName="description" class="form-control"></textarea>
+        </div>
+
+        <div class="input-group">
+          <button class="btn btn-primary col-lg-12">Salvar</button>
+        </div>
+
+        <div class="input-group">
+          <button class="btn btn-danger col-lg-12" (click)="deletar($event)">Deletar</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

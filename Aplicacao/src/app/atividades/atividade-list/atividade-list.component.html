@@ -1,0 +1,7 @@
+<ap-search (onTyping)="filter = $event" [value]="filter"></ap-search> <!-- ontyping => Método genérico criado para receber o valor do EventEmitter do Search -->
+
+<ap-atividades [atividades]="atividades | filterByDescription: filter"></ap-atividades><!-- Lista -->
+
+<ap-load-button [hasMore]="hasMore"
+                (click)="load()">
+</ap-load-button><!-- Botão 'Carregar Mais' -->

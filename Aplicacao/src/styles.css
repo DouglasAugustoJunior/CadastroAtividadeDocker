@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    padding: 60px; /* exibe o conteúdo abaixo do header */ 
+}
+
+textarea{
+    resize: none; /* remove o botão para redimensionar o textarea */
+}

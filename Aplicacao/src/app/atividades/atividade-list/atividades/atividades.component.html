@@ -1,0 +1,19 @@
+<!-- Caso não tenha atividades -->
+<p class="text-center text-muted" *ngIf="!atividades.length">
+    Desculpe, sem atividades
+</p>
+
+<!-- Lista de atividades -->
+<ol class="list-unstyled">
+    <li *ngFor="let cols of rows" class="row no-gutters"> <!-- Ícone de lupa -->
+        <div *ngFor="let atividade of cols" class="col-12" apDarkenOnHover brightness="80%">
+            <a [routerLink]="['/../atividade',atividade.id]"> <!-- Vai acessar a rota atividade/id -->
+                <ap-card>
+                    <ap-atividade
+                        [description]="atividade.name"
+                        [join_date]="atividade.join_date"></ap-atividade>
+                </ap-card>
+            </a>
+        </div>
+    </li>
+</ol>

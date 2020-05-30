@@ -1,0 +1,7 @@
+textarea{
+    resize: none;
+}
+
+.break-word {
+    word-break: break-all; /* Quebra o texto para que não estoure a página */
+}

@@ -1,0 +1,36 @@
+<div class="container">
+
+  <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="success"><!-- Alerta de salvo -->
+    <strong>Salvo com sucesso!</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+    <form [formGroup]="atividadeForm" class="row" (submit)="salvar($event)"><!-- formGroup para lidar com formulários -->
+
+      <div class="col-md-12">
+
+        <div class="form-group">
+          <label for="description"><h5>Insira sua atividade:</h5></label>
+          <textarea
+            formControlName="description"
+            class="form-control form-control-sm" 
+            placeholder="Descrição da atividade..."></textarea>
+            <ap-vmessage
+                text="Por favor, insira no máximo 300 caracteres!"
+                *ngIf="atividadeForm.get('description').errors?.maxlength"><!-- Verifica se excedeu o limite de caracteres -->
+            </ap-vmessage>
+        </div>
+
+        <button [disabled]="atividadeForm.invalid" type="submit" class="btn btn-primary btn-block">
+          Adicionar
+        </button>
+
+        <a class="btn btn-secondary btn-block" [routerLink]="['/../']">Cancelar</a>
+
+      </div>
+
+    </form>
+
+</div>
